@@ -1,3 +1,5 @@
+![Pi-hole Logo](https://path_to_your_logo_image/pihole-logo.png)
+
 # Pi-hole: Network-wide Ad Blocking
 
 ## What is Pi-hole?
