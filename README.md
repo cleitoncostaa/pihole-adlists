@@ -1,4 +1,4 @@
-![Pi-hole Logo](https://path_to_your_logo_image/pihole-logo.png)
+![Pi-hole Logo](https://github.com/cleitoncostaa/pihole-adlists/blob/main/Pi-hole_Logo.png)
 
 # Pi-hole: Network-wide Ad Blocking
 
