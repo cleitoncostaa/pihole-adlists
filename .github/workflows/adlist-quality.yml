@@ -1,0 +1,37 @@
+name: Adlist quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate active adlist
+        shell: bash
+        run: |
+          set -euo pipefail
+          file="adlists/adlist1.txt"
+          test -s "$file"
+
+          invalid=$(grep -nEv '^https://[^[:space:]]+$' "$file" || true)
+          if test -n "$invalid"; then
+            echo "Invalid lines:"
+            echo "$invalid"
+            exit 1
+          fi
+
+          duplicates=$(sort "$file" | uniq -d || true)
+          if test -n "$duplicates"; then
+            echo "Duplicate URLs:"
+            echo "$duplicates"
+            exit 1
+          fi

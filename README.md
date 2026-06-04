@@ -12,6 +12,8 @@ Use this URL in Pi-hole:
 https://raw.githubusercontent.com/cleitoncostaa/pihole-adlists/main/adlists/adlist1.txt
 ```
 
+The active list keeps only URLs that passed the latest availability review. Sources that timed out or failed validation were moved to `adlists/disabled-unreachable-20260604.txt`.
+
 ## How To Add
 
 1. Open Pi-hole Admin.
@@ -27,6 +29,7 @@ https://raw.githubusercontent.com/cleitoncostaa/pihole-adlists/main/adlists/adli
 - Avoid duplicates.
 - Review aggressive categories before using them in family or work networks.
 - Validate availability before relying on a new external list.
+- Move unstable sources to `adlists/disabled-unreachable-YYYYMMDD.txt` instead of leaving them active.
 
 ## Notes
 
